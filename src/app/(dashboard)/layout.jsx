@@ -1,5 +1,6 @@
 import { Padauk } from "next/font/google";
 import "@/app/globals.css";
+import "@/app/(dashboard)/dashboard.css";
 import DashboardHeader from "@/components/dashboard/Header";
 
 const padauk = Padauk({
@@ -15,9 +16,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="nl">
-      <body className={padauk.className}>
+      <body>
         <DashboardHeader />
-        {children}
+        <div>{children}</div>
       </body>
     </html>
   );

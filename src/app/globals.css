@@ -12,6 +12,11 @@
   --dark-background: #121212;
   --heading-on-dark: #efefef;
   --text-on-dark: #c7c7c7;
+
+  /* Shadows */
+  --shadow-on-dark: inset 0 0 0.5px 1px hsla(0, 0%, 100%, 0.075),
+    0 0 0 1px hsla(0, 0%, 0%, 0.05), 0 0.3px 0.4px hsla(0, 0%, 0%, 0.02),
+    0 0.9px 1.5px hsla(0, 0%, 0%, 0.045), 0 3.5px 6px hsla(0, 0%, 0%, 0.09);
 }
 
 html {
@@ -20,6 +25,8 @@ html {
 
 body {
   background-color: var(--dark-background);
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 h1,
@@ -32,8 +39,38 @@ h6 {
   font-family: var(--primary-font);
 }
 
-p {
+p,
+li {
   color: var(--text-on-dark);
   font-family: var(--secondary-font);
   font-size: 1.6rem;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--heading-on-dark);
+  font-size: 1.6rem;
+}
+
+/* GENERAL STYLES */
+.logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--heading-on-dark);
+  font-size: 1.6rem;
+  font-family: var(--primary-font);
+  font-weight: 700;
+  cursor: pointer;
+}
+.logout-btn-icon {
+  width: 2rem;
+  height: 2rem;
+  color: var(--heading-on-dark);
 }
