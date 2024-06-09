@@ -1,5 +1,6 @@
 "use client";
 
+import { RiAddFill, RiSendPlaneFill } from "@remixicon/react";
 import { useState, useEffect, useRef } from "react";
 
 const DropdownMenu = ({ icon, update, label }) => {
@@ -10,7 +11,6 @@ const DropdownMenu = ({ icon, update, label }) => {
     let handler = (e) => {
       if (!menuRef.current.contains(e.target)) {
         setOpenDropdown(false);
-        console.log(menuRef.current);
       }
     };
 
@@ -29,8 +29,14 @@ const DropdownMenu = ({ icon, update, label }) => {
       </button>
 
       <ul className={`dropdown-menu ${openDropdown ? "open" : ""}`}>
-        <li className="dropdown-menu_item">Create a new ticket</li>
-        <li className="dropdown-menu_item">Create a new message to admin</li>
+        <li className="dropdown-menu_item">
+          <RiAddFill className="dropdown-menu_item_icon" />
+          Maak ticket
+        </li>
+        <li className="dropdown-menu_item">
+          <RiSendPlaneFill className="dropdown-menu_item_icon" />
+          Bericht naar admin
+        </li>
       </ul>
     </div>
   );

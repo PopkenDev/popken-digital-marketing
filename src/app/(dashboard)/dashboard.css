@@ -93,11 +93,20 @@
 }
 
 .dropdown-menu_item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   color: var(--text-on-light);
   font-family: var(--primary-font);
   font-size: 1.6rem;
   font-weight: 700;
   cursor: pointer;
+}
+
+.dropdown-menu_item_icon {
+  width: 2rem;
+  height: 2rem;
+  color: var(--text-on-light);
 }
 
 .hamburger-container {
@@ -173,6 +182,7 @@
   box-shadow: var(--shadow-on-dark);
   overflow: hidden;
   transition: all 0.3s ease-in-out;
+  z-index: 100;
 }
 .open.sidebar {
   transform: translate(0);

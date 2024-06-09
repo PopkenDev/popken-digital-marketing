@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   RiInbox2Fill,
   RiDashboardFill,
@@ -16,8 +16,21 @@ const HamburgerMenu = () => {
     name: "Herman Popken",
     email: "popkendev@outlook.com",
   });
+  const sidebarRef = useRef();
+
+  useEffect(() => {
+    const handler = (e) => {
+      if (!sidebarRef.current.contains(e.target)) {
+        setIsOpen(false);
+        console.log("click outside");
+      }
+    };
+
+    document.addEventListener("mousedown", handler);
+  }, []);
+
   return (
-    <>
+    <div ref={sidebarRef}>
       <button
         type="button"
         title="menu-button"
@@ -51,27 +64,27 @@ const HamburgerMenu = () => {
               </li>
               <li className="sidebar-nav_list-item">
                 <RiInbox2Fill className="sidebar-nav_list-item-icon" />
-                Inbox
+                Berichten
               </li>
               <li className="sidebar-nav_list-item">
                 <RiPieChart2Fill className="sidebar-nav_list-item-icon" />
-                Analytics
+                Analyse
               </li>
               <li className="sidebar-nav_list-item">
                 <RiSettings5Fill className="sidebar-nav_list-item-icon" />
-                Settings
+                Instellingen
               </li>
             </ul>
           </nav>
           <div>
             <button className="logout-btn">
               <RiLogoutBoxRLine className="logout-btn-icon" />
-              Logout
+              Uitloggen
             </button>
           </div>
         </div>
       </aside>
-    </>
+    </div>
   );
 };
 
