@@ -1,6 +1,5 @@
 import { Padauk } from "next/font/google";
 import "@/app/globals.css";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const padauk = Padauk({
   subsets: ["latin"],
@@ -14,11 +13,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={padauk.className}>
-        <SpeedInsights />
-        {children}
-      </body>
+    <html lang="nl">
+      <body className={padauk.className}>{children}</body>
     </html>
   );
 }

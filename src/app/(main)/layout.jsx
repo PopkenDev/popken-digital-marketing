@@ -1,11 +1,11 @@
 import { Padauk } from "next/font/google";
 import "@/app/globals.css";
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
-const padauk = Padauk({ 
+const padauk = Padauk({
   subsets: ["latin"],
   weight: ["400", "700"],
- });
+});
 
 export const metadata = {
   title: "Popken Digital Solutions",
@@ -14,10 +14,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="nl">
       <body className={padauk.className}>
         <SpeedInsights />
-        {children}</body>
+        {children}
+      </body>
     </html>
   );
 }
