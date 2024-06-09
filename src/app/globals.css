@@ -10,8 +10,11 @@
   --primary-font: "Raleway", sans-serif;
   --secondary-font: "Padauk", sans-serif;
   --dark-background: #121212;
+  --light-component-background: #cecece;
   --heading-on-dark: #efefef;
   --text-on-dark: #c7c7c7;
+  --heading-on-light: #121212;
+  --text-on-light: #333;
 
   /* Shadows */
   --shadow-on-dark: inset 0 0 0.5px 1px hsla(0, 0%, 100%, 0.075),

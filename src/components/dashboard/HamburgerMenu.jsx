@@ -19,6 +19,8 @@ const HamburgerMenu = () => {
   return (
     <>
       <button
+        type="button"
+        title="menu-button"
         onClick={() => setIsOpen(!isOpen)}
         className="hamburger-container"
       >
