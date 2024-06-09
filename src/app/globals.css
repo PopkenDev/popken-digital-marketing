@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Padauk:wght@400;700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-font: "Raleway", sans-serif;
+  --secondary-font: "Padauk", sans-serif;
+  --dark-background: #121212;
+  --heading-on-dark: #efefef;
+  --text-on-dark: #c7c7c7;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  background-color: var(--dark-background);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading-on-dark);
+  font-family: var(--primary-font);
+}
+
+p {
+  color: var(--text-on-dark);
+  font-family: var(--secondary-font);
+  font-size: 1.6rem;
+}

@@ -1,0 +1,6 @@
+.dashboardContainer {
+  height: 100svh;
+  width: 100vw;
+  display: grid;
+  place-items: center;
+}
