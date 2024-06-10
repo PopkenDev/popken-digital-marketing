@@ -9,12 +9,14 @@ import {
   RiSettings5Fill,
   RiLogoutBoxRLine,
 } from "@remixicon/react";
+import Link from "next/link";
 
 const HamburgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [user, setUser] = useState({
     name: "Herman Popken",
     email: "popkendev@outlook.com",
+    role: "admin",
   });
   const sidebarRef = useRef();
 
@@ -22,7 +24,6 @@ const HamburgerMenu = () => {
     const handler = (e) => {
       if (!sidebarRef.current.contains(e.target)) {
         setIsOpen(false);
-        console.log("click outside");
       }
     };
 
@@ -58,10 +59,25 @@ const HamburgerMenu = () => {
           </div>
           <nav className="sidebar-nav">
             <ul className="sidebar-nav_list">
-              <li className="sidebar-nav_list-item">
-                <RiDashboardFill className="sidebar-nav_list-item-icon" />
-                Dashboard
-              </li>
+              {/* Admin routes */}
+              {user.role === "admin" && (
+                <Link
+                  onClick={() => setIsOpen(false)}
+                  href="/dashboard/admin/gebruiker-toevoegen"
+                >
+                  <li className="sidebar-nav_list-item">
+                    <RiSettings5Fill className="sidebar-nav_list-item-icon" />
+                    Admin
+                  </li>
+                </Link>
+              )}
+              <Link onClick={() => setIsOpen(false)} href="/dashboard">
+                <li className="sidebar-nav_list-item">
+                  <RiDashboardFill className="sidebar-nav_list-item-icon" />
+                  Dashboard
+                </li>
+              </Link>
+
               <li className="sidebar-nav_list-item">
                 <RiInbox2Fill className="sidebar-nav_list-item-icon" />
                 Berichten
